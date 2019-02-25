@@ -1,0 +1,50 @@
+.bottom-bar{
+  padding:10px 5%;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background-color:#ffffff;
+  border-top: 2rpx solid #eeeeee;
+}
+
+.as-item{
+  padding:10px 5%;
+  color:#000000;
+}
+
+.as-head-part{
+  width:15%;
+  display: inline-block;
+}
+
+.as-content{
+  display: inline-block;
+  width:75%;
+  background-color:#ebebeb;
+  padding:5px;
+  border-radius:5px;
+  transform: translateY(-10px);
+}
+
+.as-conner{
+  width:0;
+  height:0;
+  border-width:10px;
+  border-style:dashed solid dashed dashed;
+  font-size:0;
+  line-height:0;
+  border-color:transparent #ebebeb transparent transparent;
+  position:absolute;
+  transform:translateX(-20px);
+}
+
+.as-head{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.as-container{
+  font-size: 15px;
+  width: 100%;
+}

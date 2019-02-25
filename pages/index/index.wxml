@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='title'>
+    <text class='title-content'>{{title}}</text>
+  </view>
+  <view>
+    <image class='logo' src='./logo.jpg'></image>
+  </view>
+  <view class='btn-bar'>
+    <button class='entry-btn' bindtap='entryMainPage'> 进入 </button>
+  </view>
+</view>

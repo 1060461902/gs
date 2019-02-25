@@ -1,0 +1,20 @@
+<view>
+  <view class='as-container'>
+    <view class='as-item'>
+      <view class='as-head-part'>
+        <image class='as-head' src='./logo_head.jpg'></image>
+      </view>
+      <view class='as-content'>
+        <view class='as-conner'></view>
+        <text>您好，小智为您服务</text>
+      </view>
+    </view>
+  </view> 
+  <view class='bottom-bar'>
+    <input 
+      type='text'
+      confirm-type='send'
+      placeholder='请输入问题'
+      focus/>
+  </view>
+</view>

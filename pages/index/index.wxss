@@ -1,0 +1,28 @@
+/**index.wxss**/
+.title{
+  margin-bottom: 20px;
+}
+
+.title-content{
+  font-size: 1.5rem
+}
+
+.logo{
+  width: 12rem
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-bar{
+  margin-top: 20px;
+}
+
+.entry-btn{
+  background-color: rgb(140, 190, 255);
+  border: none;
+  width: 100px;
+}

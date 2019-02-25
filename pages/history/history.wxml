@@ -1,0 +1,46 @@
+<view>
+  <text class='title'>历史记录</text>
+  <picker
+    class='show-type'
+    mode='selector' 
+    value="{{index}}" 
+    bindchange="bindPickerChange"
+    range='{{range}}'>
+    <view class="picker">
+      {{range[index]}}
+      <view class='arrow'></view>
+    </view>
+  </picker>
+  <scroll-view
+    wx:if='{{index==0}}'
+    scroll-y
+    class='scroll-style'>
+    <rich-text
+      class='question'
+      wx:for='{{items}}'
+      wx:for-item="item"
+      wx:key='{{index}}'
+      type='a'
+      bindtap='tapMsg'>{{item.msg}}</rich-text>
+  </scroll-view>
+  <view
+    class='calendar'
+    wx:if='{{index==1}}'>
+    <view 
+      class='calendar-row'
+      wx:for='{{days}}'
+      wx:for-item="day_row">
+      <view 
+        class='calendar-cell {{22==day.day?"current-day":""}}'
+        wx:for='{{day_row}}'
+        wx:for-item='day'
+        bindtap='tapDay'>
+          <view class='calendar-day'>{{day.day}}</view>
+          <view class='calendar-month'>{{day.month}}月</view>
+        </view>
+    </view>
+  </view>
+  <view class='bottom-btn-bar'>
+    <button class='bottom-btn' bindtap='cleanAll'>一键清除历史记录</button>
+  </view>
+</view>
