@@ -1,20 +1,40 @@
 <view>
-  <view class='as-container'>
-    <view class='as-item'>
-      <view class='as-head-part'>
-        <image class='as-head' src='./logo_head.jpg'></image>
-      </view>
-      <view class='as-content'>
-        <view class='as-conner'></view>
-        <text>您好，小智为您服务</text>
-      </view>
-    </view>
-  </view> 
+  <view 
+    class='as-container'
+    wx:for='{{message_list}}'
+    wx:key='index'>
+    <template is='{{item.type}}' data='{{...item.data}}'/>
+  </view>
   <view class='bottom-bar'>
     <input 
       type='text'
       confirm-type='send'
       placeholder='请输入问题'
-      focus/>
+      focus
+      bindconfirm='sendMsg'/>
   </view>
 </view>
+<!-- 系统回复模板_纯文本 -->
+<template name='reply-item-text'>
+  <view class='as-item'>
+    <view class='as-head-part'>
+      <image class='as-head' src='./logo_head.jpg'></image>
+    </view>
+    <view class='as-content'>
+      <view class='as-conner'></view>
+      <text class='text-content'>{{text}}</text>
+    </view>
+  </view>
+</template>
+<!-- 用户提问模板 -->
+<template name='ask-item'>
+  <view class='ask-item'>
+    <view class='ask-content'>
+      <text class='text-content'>{{text}}</text>
+      <view class='ask-conner'></view>
+    </view>
+    <view class='ask-head-part'>
+      <image class='ask-head' src='{{head_url}}'></image>
+    </view>
+  </view>
+</template>
