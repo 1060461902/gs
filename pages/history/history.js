@@ -67,7 +67,6 @@ Page({
       }
       final_days.push(temp);
     }
-    console.log(final_days);
     this.setData({
       days:final_days
     });

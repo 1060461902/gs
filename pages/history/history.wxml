@@ -31,7 +31,7 @@
       wx:for='{{days}}'
       wx:for-item="day_row">
       <view 
-        class='calendar-cell {{22==day.day?"current-day":""}}'
+        class='calendar-cell {{day.hasHistory?"current-day":""}}'
         wx:for='{{day_row}}'
         wx:for-item='day'
         bindtap='tapDay'>

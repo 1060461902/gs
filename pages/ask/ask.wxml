@@ -11,7 +11,9 @@
       confirm-type='send'
       placeholder='请输入问题'
       focus
-      bindconfirm='sendMsg'/>
+      bindconfirm='sendMsg'
+      bindinput='bindMessage'
+      value='{{message}}'/>
   </view>
 </view>
 <!-- 系统回复模板_纯文本 -->
@@ -29,12 +31,12 @@
 <!-- 用户提问模板 -->
 <template name='ask-item'>
   <view class='ask-item'>
+    <view class='ask-head-part'>
+      <image class='ask-head' src='{{head_url}}'></image>
+    </view>
     <view class='ask-content'>
       <text class='text-content'>{{text}}</text>
       <view class='ask-conner'></view>
-    </view>
-    <view class='ask-head-part'>
-      <image class='ask-head' src='{{head_url}}'></image>
     </view>
   </view>
 </template>

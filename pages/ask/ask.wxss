@@ -14,6 +14,8 @@
 }
 
 .ask-item{
+  display: flex;
+  flex-direction:row-reverse;
   position: relative;
   padding:10px 2% 10px 5%;
   color:#000000;
@@ -21,15 +23,20 @@
 
 .as-head-part,
 .ask-head-part{
+  position: relative;
   vertical-align:top;
   width:15%;
   display: inline-block;
 }
 
+.ask-head-part{
+  right: 0;
+}
+
 .as-content{
   position: relative;
   display: inline-block;
-  width:75%;
+  max-width:75%;
   background-color:#ebebeb;
   padding:5px;
   border-radius:5px;
@@ -37,8 +44,10 @@
 
 .ask-content{
   position: relative;
+  align-self: baseline;
+  right: 0;
   display: inline-block;
-  width:75%;
+  max-width:75%;
   background-color:#53ff1e;
   padding:5px;
   border-radius:5px;

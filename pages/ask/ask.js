@@ -7,7 +7,8 @@ Page({
    */
   data: {
     userInfo: {},
-    message_list:[]
+    message_list:[],
+    message:''
   },
 
   onLoad:function(options){
@@ -54,7 +55,14 @@ Page({
       data: { text: msg, head_url: that.data.userInfo.avatarUrl }
     });
     this.setData({
-      message_list
+      message_list,
+      message:''
+    });
+  },
+
+  bindMessage:function(e){
+    this.setData({
+      message:e.detail.value
     });
   }
 })
