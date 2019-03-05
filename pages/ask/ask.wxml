@@ -16,7 +16,20 @@
       value='{{message}}'/>
   </view>
 </view>
-<!-- 系统回复模板_纯文本 -->
+
+<!-- 用户提问模板 data:{head_url,text} -->
+<template name='ask-item'>
+  <view class='ask-item'>
+    <view class='ask-head-part'>
+      <image class='ask-head' src='{{head_url}}'></image>
+    </view>
+    <view class='ask-content'>
+      <text class='text-content'>{{text}}</text>
+      <view class='ask-conner'></view>
+    </view>
+  </view>
+</template>
+<!-- 系统回复模板_纯文本 data:{text} -->
 <template name='reply-item-text'>
   <view class='as-item'>
     <view class='as-head-part'>
@@ -28,15 +41,74 @@
     </view>
   </view>
 </template>
-<!-- 用户提问模板 -->
-<template name='ask-item'>
-  <view class='ask-item'>
-    <view class='ask-head-part'>
-      <image class='ask-head' src='{{head_url}}'></image>
+<!-- 系统回复模板_不满意  data:{id,position} -->
+<template name='reply-item-feedback'>
+  <view class='as-item'>
+    <view class='as-head-part'>
+      <image class='as-head' src='./logo_head.jpg'></image>
     </view>
-    <view class='ask-content'>
-      <text class='text-content'>{{text}}</text>
-      <view class='ask-conner'></view>
+    <view class='as-content'>
+      <view class='as-conner'></view>
+      <view class='fb-title'>
+        <text>反馈:</text>
+      </view>
+      <view class='fb-choise'>
+        <button
+          class='contented-btn'
+          bindtap='content'
+          data-id='{{id}}'
+          data-position='{{position}}'
+        >满意</button>
+        <button
+          class='discontented-btn'
+          bindtap='discontent'
+          data-id='{{id}}'
+          data-position='{{position}}'
+        >不满意</button>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- 系统回复模板_反馈 data:{id,position,detail,show_input,show_button} -->
+<template name='reply-item-discontent'>
+  <view class='as-item'>
+    <view class='as-head-part'>
+      <image class='as-head' src='./logo_head.jpg'></image>
+    </view>
+    <view class='as-content'>
+      <view class='as-conner'></view>
+      <view class='dc-title'>
+        <text>不满意的原因：</text>
+      </view>
+      <radio-group
+        class='dc-choise'
+        bindchange='selectDiscontentReason'
+        data-position='{{position}}'
+      >
+        <radio value='0'>答非所问</radio>
+        <radio value='1'>回答不详细</radio>
+        <radio value='2'>其他</radio>
+      </radio-group>
+      <input 
+        wx:if='{{show_input}}'
+        confirm-type='done'
+        class='discontent-detail'
+        placeholder='请阐述您不满意的原因'
+        data-position='{{position}}'
+        bindinput='discontentDetailInput'
+        value='{{detail}}'
+      />
+      <view class='send-discontent-reason'>
+        <button
+          bindtap='sendDiscontentReason'
+          data-position='{{position}}'
+          wx:if='{{show_button}}'
+        >发送</button>
+        <button
+          bindtap='cancelDiscontentReason'
+          data-position='{{position}}'
+        >取消</button>
+      </view>
     </view>
   </view>
 </template>

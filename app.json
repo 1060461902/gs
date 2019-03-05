@@ -4,7 +4,8 @@
     "pages/main/main",
     "pages/history/history",
     "pages/collect/collect",
-    "pages/ask/ask"
+    "pages/ask/ask",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",

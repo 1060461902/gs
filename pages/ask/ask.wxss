@@ -101,3 +101,51 @@
   font-size: 15px;
   width: 100%;
 }
+
+.fb-title,
+.dc-title{
+  margin-bottom: 15px;
+}
+
+.fb-choise{
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.contented-btn,
+.discontented-btn{
+  width: 80px;
+  border: none;
+  font-size: 15px;
+  color: white;
+  line-height: 2;
+}
+
+.contented-btn{
+  background: rgb(84, 163, 253);
+}
+
+.discontented-btn{
+  background: rgb(255, 96, 131);
+}
+
+.discontent-detail{
+  margin-top: 15px;
+  background: rgb(255, 255, 255);
+}
+
+.send-discontent-reason{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5%;
+}
+
+.send-discontent-reason button{
+  border: none;
+  font-size: 12px;
+  line-height: 2;
+  background: rgb(84, 163, 253);
+  color: rgb(255, 255, 255);
+}
