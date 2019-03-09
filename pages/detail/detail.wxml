@@ -1,0 +1,19 @@
+<view>
+  <view class='detail-top'>
+    <view class='detail-title'>{{title}}</view>
+    <view class='detail-collect'>
+      <button
+        class='detail-collect-btn'
+        wx:if='{{!collect}}'
+        bindtap='collect'
+      >收藏</button>
+      <button
+        class='detail-uncollect-btn'
+        wx:if='{{collect}}'
+        bindtap='collect'
+      >取消收藏</button>
+    </view>
+  </view>
+  
+  <view class='detail-content'>{{content}}</view>
+</view>

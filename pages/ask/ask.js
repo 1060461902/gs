@@ -50,6 +50,22 @@ Page({
         id:1
       }
     });
+    message_list.push({
+      type:'reply-item-response',
+      data: {
+        multi:true,
+        response_list:[
+          {
+            title:'回复内容',
+            id:10
+          },
+          {
+            title: '回复内容',
+            id: 12
+          }
+        ]
+      }
+    });
     this.setData({
       message_list
     });

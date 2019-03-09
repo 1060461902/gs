@@ -6,8 +6,8 @@ Page({
   data: {
     days:[],
     items: [
-      { id: 1, msg: '1312321' },
-      { id: 2, msg: '1312123541' },
+      { id: 1, msg: '1312321', time: '2019-1-30' },
+      { id: 2, msg: '1312123541', time: '2019-1-30' },
     ],
     index:0, //true => item;false => calendar
     range: [ '按问题','按时间']
@@ -72,12 +72,15 @@ Page({
     });
   },
   cleanAll: function () {
+    let that = this;
     wx.showModal({
       title: '提示',
       content: '确定要清空历史记录吗？',
       success: function (sm) {
         if (sm.confirm) {
-          // 用户点击确定
+          that.setData({
+            items: []
+          });
         }
       }
     })

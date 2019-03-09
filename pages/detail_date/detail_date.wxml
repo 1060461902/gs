@@ -1,5 +1,5 @@
 <view>
-  <text class='title'>我的收藏</text>
+  <text class='title'>{{year}}年{{month>10 ? month : '0'+month}}月{{day>10 ? day : '0'+day}}日</text>
   <scroll-view 
     scroll-y
     class='scroll-style'>

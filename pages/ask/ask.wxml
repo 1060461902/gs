@@ -10,10 +10,10 @@
       type='text'
       confirm-type='send'
       placeholder='请输入问题'
-      focus
       bindconfirm='sendMsg'
       bindinput='bindMessage'
-      value='{{message}}'/>
+      value='{{message}}'
+    />
   </view>
 </view>
 
@@ -109,6 +109,25 @@
           data-position='{{position}}'
         >取消</button>
       </view>
+    </view>
+  </view>
+</template>
+<!-- 系统回复模板_详情链接 data:{response_list:[id,title],multi} -->
+<template name='reply-item-response'>
+  <view class='as-item'>
+    <view class='as-head-part'>
+      <image class='as-head' src='./logo_head.jpg'></image>
+    </view>
+    <view class='as-content'>
+      <view class='as-conner'></view>
+      <navigator
+        class='ng-to-detail'
+        url='/pages/detail/detail?id={{item.id}}'
+        wx:for='{{response_list}}'
+        wx:key='index'
+      >
+        <text class='text-content'>{{multi ? (index+1)+'.' : ''}}{{item.title}}</text>
+      </navigator>
     </view>
   </view>
 </template>

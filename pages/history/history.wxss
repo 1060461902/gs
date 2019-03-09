@@ -8,13 +8,26 @@
 
 .scroll-style{
   height: 800rpx;
-  text-align: center;
 }
 
 .scroll-style .question{
+  padding: 5%;
+  border-top: 1px solid #eeeeee;
+}
+
+.scroll-style .question:last-child{
+  border-bottom:1px solid #eeeeee;
+}
+
+.scroll-style .question .question-message{
+  font-size: 16px;
   color: #138cdd;
   display: block;
-  margin: 50rpx 0;
+  word-wrap: break-word;
+}
+
+.scroll-style .question .question-time{
+  font-size: 12px;
 }
 
 .bottom-btn-bar{

@@ -4,62 +4,53 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    title:'',
+    content:'',
+    collect:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      title: 'ausdhauishdiuashdui',
+      content: '<img src=""/>asdfasdfasdfasd fasdfasdfa sdfasdfasdfasd fasdfas fsadfasd'
+    });
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 点击收藏
    */
-  onReady: function () {
-    
+  collect:function(e){
+    let that = this;
+    wx.showModal({
+      title: '提示',
+      content: '确定收藏问题吗？',
+      success: function (sm) {
+        if (sm.confirm) {
+          that.setData({
+            collect:true
+          });
+        }
+      }
+    })
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 点击取消收藏
    */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
+  uncollect:function(e){
+    wx.showModal({
+      title: '提示',
+      content: '确定取消收藏问题吗？',
+      success: function (sm) {
+        if (sm.confirm) {
+          that.setData({
+            collect: false
+          });
+        }
+      }
+    })
   }
 })

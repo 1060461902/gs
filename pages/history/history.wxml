@@ -15,13 +15,17 @@
     wx:if='{{index==0}}'
     scroll-y
     class='scroll-style'>
-    <rich-text
+    <navigator
+      url='/pages/detail/detail'
       class='question'
       wx:for='{{items}}'
       wx:for-item="item"
-      wx:key='{{index}}'
       type='a'
-      bindtap='tapMsg'>{{item.msg}}</rich-text>
+      bindtap='tapMsg'
+    >
+      <view class='question-time'>{{item.time}}</view>
+      <view class='question-message'>{{item.msg}}</view>
+    </navigator>
   </scroll-view>
   <view
     class='calendar'
@@ -30,14 +34,15 @@
       class='calendar-row'
       wx:for='{{days}}'
       wx:for-item="day_row">
-      <view 
+      <navigator
+        url='/pages/detail_date/detail_date?m={{day.month}}&d={{day.day}}'
         class='calendar-cell {{day.hasHistory?"current-day":""}}'
         wx:for='{{day_row}}'
         wx:for-item='day'
         bindtap='tapDay'>
           <view class='calendar-day'>{{day.day}}</view>
           <view class='calendar-month'>{{day.month}}月</view>
-        </view>
+      </navigator>
     </view>
   </view>
   <view class='bottom-btn-bar'>

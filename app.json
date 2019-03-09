@@ -5,7 +5,8 @@
     "pages/history/history",
     "pages/collect/collect",
     "pages/ask/ask",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/detail_date/detail_date"
   ],
   "window":{
     "backgroundTextStyle":"light",

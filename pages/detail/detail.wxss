@@ -1,0 +1,38 @@
+.detail-title{
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5%;
+}
+
+.detail-content{
+  padding: 4%;
+  font-size: 13px;
+  word-wrap: break-word;
+}
+
+.detail-top{
+  background-color: #f0f0f0;
+}
+
+.detail-collect{
+  padding: 0 0 5%;
+}
+
+.detail-collect-btn,
+.detail-uncollect-btn{
+  width: 80px;
+  border: none;
+  color: white;
+  line-height: 2;
+}
+
+.detail-collect-btn{
+  font-size: 12px;
+  background: rgb(84, 163, 253);
+}
+
+.detail-uncollect-btn{
+  font-size: 12px;
+  background: rgb(255, 96, 131);
+}
