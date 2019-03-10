@@ -6,8 +6,8 @@ Page({
   data: {
     days:[],
     items: [
-      { id: 1, msg: '1312321', time: '2019-1-30' },
-      { id: 2, msg: '1312123541', time: '2019-1-30' },
+      { id: 1, msg: '如何修改账户资金密码？', time: '2019-03-01' },
+      { id: 2, msg: '新股中签如何缴款？', time: '2019-03-01' },
     ],
     index:0, //true => item;false => calendar
     range: [ '按问题','按时间']

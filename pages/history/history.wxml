@@ -36,7 +36,7 @@
       wx:for-item="day_row">
       <navigator
         url='/pages/detail_date/detail_date?m={{day.month}}&d={{day.day}}'
-        class='calendar-cell {{day.hasHistory?"current-day":""}}'
+        class='calendar-cell {{day.day == 1 || day.day == 22?"current-day":""}}'
         wx:for='{{day_row}}'
         wx:for-item='day'
         bindtap='tapDay'>

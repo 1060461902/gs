@@ -10,7 +10,7 @@
       <button
         class='detail-uncollect-btn'
         wx:if='{{collect}}'
-        bindtap='collect'
+        bindtap='uncollect'
       >取消收藏</button>
     </view>
   </view>

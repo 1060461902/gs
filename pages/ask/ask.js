@@ -43,29 +43,6 @@ Page({
       type: "reply-item-text",
       data: { text: "您好，小智为您服务" }
     });
-    message_list.push({
-      type:'reply-item-feedback',
-      data:{
-        position: message_list.length,
-        id:1
-      }
-    });
-    message_list.push({
-      type:'reply-item-response',
-      data: {
-        multi:true,
-        response_list:[
-          {
-            title:'回复内容',
-            id:10
-          },
-          {
-            title: '回复内容',
-            id: 12
-          }
-        ]
-      }
-    });
     this.setData({
       message_list
     });
@@ -84,6 +61,21 @@ Page({
       message_list,
       message:''
     });
+
+    this.answer([
+      {
+        title: '新股中签如何缴款？',
+        id: 10
+      },
+      {
+        title: '新股中签，未及时缴款有什么影响？',
+        id: 12
+      },
+      {
+        title: 'A股股票配股与增发的缴款时间有何区别？',
+        id:1
+      }
+    ]);
   },
 
   //底部输入框变化时改变message的值
@@ -176,6 +168,40 @@ Page({
     message_list.splice(position, 1, {
       type: "reply-item-text",
       data: { text: "已取消反馈，如还有问题，您可继续提问。" }
+    });
+    this.setData({
+      message_list
+    });
+  },
+
+  /**
+   * 系统回复——返回结果
+   * @param arr [{title,id}] 例子:[
+          {
+            title: '回复内容',
+            id: 10
+          },
+          {
+            title: '回复内容',
+            id: 12
+          }
+        ]
+   */
+  answer:function(arr){
+    let message_list = this.data.message_list;
+    message_list.push({
+      type: 'reply-item-response',
+      data: {
+        multi: true,
+        response_list: arr
+      }
+    });
+    message_list.push({
+      type: 'reply-item-feedback',
+      data: {
+        position: message_list.length,
+        id: 1
+      }
     });
     this.setData({
       message_list
