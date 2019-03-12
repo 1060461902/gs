@@ -1,3 +1,8 @@
+.userinfo-btn {
+  width: 300rpx;
+  margin: 20rpx auto;
+}
+
 .userinfo-avatar {
   display: inline-block;
   width: 128rpx;
