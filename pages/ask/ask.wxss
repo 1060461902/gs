@@ -40,6 +40,7 @@
   background-color:#ebebeb;
   padding:5px;
   border-radius:5px;
+  transform:translateY(5px);
 }
 
 .ask-content{
@@ -51,6 +52,7 @@
   background-color:#53ff1e;
   padding:5px;
   border-radius:5px;
+  transform:translateY(5px);
 }
 
 .as-conner{

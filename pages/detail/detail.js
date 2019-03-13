@@ -53,5 +53,14 @@ Page({
         }
       }
     })
+  },
+
+  /**
+   * 点击右下角返回首页
+   */
+  backHome:function(){
+    wx.redirectTo({
+      url: '/pages/main/main',
+    })
   }
 })

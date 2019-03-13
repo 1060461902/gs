@@ -62,20 +62,29 @@ Page({
       message:''
     });
 
-    this.answer([
-      {
-        title: '新股中签如何缴款？',
-        id: 10
-      },
-      {
-        title: '新股中签，未及时缴款有什么影响？',
-        id: 12
-      },
-      {
-        title: 'A股股票配股与增发的缴款时间有何区别？',
-        id:1
-      }
-    ]);
+    if(msg == "新股中签怎么付费"){
+      this.answer(true,[
+        {
+          title: '新股中签如何缴款？',
+          id: 10
+        }
+      ]);
+    }else{
+      this.answer(false, [
+        {
+          title: '新股中签如何缴款？',
+          id: 10
+        },
+        {
+          title: '新股中签，未及时缴款有什么影响？',
+          id: 12
+        },
+        {
+          title: 'A股股票配股与增发的缴款时间有何区别？',
+          id: 1
+        }
+      ]);
+    }
   },
 
   //底部输入框变化时改变message的值
@@ -187,15 +196,29 @@ Page({
           }
         ]
    */
-  answer:function(arr){
+  answer:function(isDefinite,arr){
     let message_list = this.data.message_list;
-    message_list.push({
-      type: 'reply-item-response',
-      data: {
-        multi: true,
-        response_list: arr
-      }
-    });
+    if (isDefinite){
+      message_list.push({
+        type: 'reply-item-response',
+        data: {
+          multi: false,
+          response_list: arr
+        }
+      });
+    }else{
+      message_list.push({
+        type: "reply-item-text",
+        data: { text: "未找到匹配问题，以下为相似问题" }
+      });
+      message_list.push({
+        type: 'reply-item-response',
+        data: {
+          multi: true,
+          response_list: arr
+        }
+      });
+    } 
     message_list.push({
       type: 'reply-item-feedback',
       data: {

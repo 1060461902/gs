@@ -4,7 +4,8 @@
   </view>
   <view wx:if="{{hasUserInfo}}">
     <image class='userinfo-avatar' src='{{userInfo.avatarUrl}}'></image>
-    <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
+    <text class='userinfo-nickname'>测试</text>
+    <!-- {{userInfo.nickName}} -->
   </view>
   <view class='history-collective'>
     <view>

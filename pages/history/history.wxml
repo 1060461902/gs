@@ -15,17 +15,19 @@
     wx:if='{{index==0}}'
     scroll-y
     class='scroll-style'>
-    <navigator
-      url='/pages/detail/detail'
+    <view
       class='question'
       wx:for='{{items}}'
       wx:for-item="item"
       type='a'
       bindtap='tapMsg'
+      bindtouchstart="mytouchstart"
+      bindtouchend="mytouchend"
+      data-i='{{index}}'
     >
       <view class='question-time'>{{item.time}}</view>
       <view class='question-message'>{{item.msg}}</view>
-    </navigator>
+    </view>
   </scroll-view>
   <view
     class='calendar'
