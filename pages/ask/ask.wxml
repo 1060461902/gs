@@ -1,10 +1,15 @@
-<view>
-  <view 
-    class='as-container'
-    wx:for='{{message_list}}'
-    wx:key='index'>
-    <template is='{{item.type}}' data='{{...item.data}}'/>
-  </view>
+<view id='ask-page'>
+  <scroll-view
+    class='items-container'
+  >
+    <view 
+      class='as-container'
+      wx:for='{{message_list}}'
+      wx:key='index'>
+      <template is='{{item.type}}' data='{{...item.data}}'/>
+    </view>
+  </scroll-view>
+  
   <view class='bottom-bar'>
     <input 
       type='text'

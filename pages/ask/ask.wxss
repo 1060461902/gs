@@ -1,5 +1,5 @@
 .bottom-bar{
-  padding:10px 5%;
+  padding:0.5rem 5%;
   position:fixed;
   bottom:0;
   width:100%;
@@ -102,6 +102,10 @@
 .as-container{
   font-size: 15px;
   width: 100%;
+}
+
+.items-container{
+  margin-bottom: 2.4rem;
 }
 
 .fb-title,

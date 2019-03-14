@@ -8,7 +8,8 @@ Page({
   data: {
     userInfo: {},
     message_list:[],
-    message:''
+    message:'',
+    scrollTop:0
   },
 
   onLoad:function(options){
@@ -85,6 +86,8 @@ Page({
         }
       ]);
     }
+
+    this.flashScroll();
   },
 
   //底部输入框变化时改变message的值
@@ -229,5 +232,24 @@ Page({
     this.setData({
       message_list
     });
+  },
+
+  /**
+   * 更新滚动条高度
+   */
+  flashScroll:function(){
+    let that = this;
+
+    const query = wx.createSelectorQuery()
+    query.select('.items-container').boundingClientRect()
+    // query.selectViewport().scrollOffset()
+    query.exec(function (res) {
+      wx.createSelectorQuery().select('#ask-page').boundingClientRect(function (rect) {
+        // 使页面滚动到底部
+        wx.pageScrollTo({
+          scrollTop: res[0].height
+        })
+      }).exec()
+    })
   }
 })
