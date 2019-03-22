@@ -9,7 +9,7 @@
 
 .as-item{
   position: relative;
-  padding:10px 5% 10px 2%;
+  padding:20rpx 2% 20rpx 5%;
   color:#000000;
 }
 
@@ -17,7 +17,7 @@
   display: flex;
   flex-direction:row-reverse;
   position: relative;
-  padding:10px 2% 10px 5%;
+  padding:20rpx 2% 20rpx 5%;
   color:#000000;
 }
 
@@ -38,9 +38,9 @@
   display: inline-block;
   max-width:75%;
   background-color:#ebebeb;
-  padding:5px;
-  border-radius:5px;
-  transform:translateY(5px);
+  padding:10rpx;
+  border-radius:10rpx;
+  transform:translateY(10rpx);
 }
 
 .ask-content{
@@ -50,41 +50,41 @@
   display: inline-block;
   max-width:75%;
   background-color:#53ff1e;
-  padding:5px;
-  border-radius:5px;
-  transform:translateY(5px);
+  padding:10rpx;
+  border-radius:10rpx;
+  transform:translateY(10rpx);
 }
 
 .as-conner{
   width:0;
   height:0;
-  border-width:10px;
+  border-width:20rpx;
   border-style:dashed solid dashed dashed;
   font-size:0;
   line-height:0;
   border-color:transparent #ebebeb transparent transparent;
   position:absolute;
-  transform:translateX(-20px);
+  transform:translateX(-40rpx);
 }
 
 .ask-conner{
   width:0;
   height:0;
-  border-width:10px;
+  border-width:20rpx;
   border-style:dashed dashed dashed solid;
   font-size:0;
   line-height:0;
   border-color:transparent transparent transparent #53ff1e;
   position:absolute;
   right: 0;
-  top: 5px;
-  transform:translateX(15px);
+  top: 10rpx;
+  transform:translateX(30rpx);
 }
 
 .as-head,
 .ask-head{
-  width: 40px;
-  height: 40px;
+  width: 70rpx;
+  height: 70rpx;
   border: 1px solid #e0e0e080;
   border-radius: 10%;
   position: relative;
@@ -100,7 +100,7 @@
 }
 
 .as-container{
-  font-size: 15px;
+  font-size: 30rpx;
   width: 100%;
 }
 
