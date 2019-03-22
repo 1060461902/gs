@@ -30,20 +30,6 @@
   font-size: 12px;
 }
 
-.bottom-btn-bar{
-  position: absolute;
-  width: 100%;
-  height: 100rpx;
-  bottom: 50rpx;
-}
-
-.bottom-btn{
-  border: none;
-  color: white;
-  background-color: rgb(112, 179, 255);
-  width: 50%;
-}
-
 .show-type{
   position: relative;
   height: 50rpx;
@@ -106,4 +92,30 @@
 
 .calendar-month{
   font-size: 15px;
+}
+
+.right-corner{
+  position: fixed;
+  bottom:100rpx;
+  right: 70rpx;
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+}
+
+.right-corner-invisible{
+  opacity: 0;
+  z-index: -1;
+}
+
+.right-corner-trashcan{
+  height: 80rpx;
+  width: 80rpx;
+  border: 1px solid #dd657220;
+}
+
+.right-corner-exchange{
+  height: 80rpx;
+  width: 80rpx;
+  border: 1px solid #fee84720;
 }

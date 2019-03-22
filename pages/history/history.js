@@ -11,8 +11,28 @@ Page({
     ],
     index:0, //true => item;false => calendar
     range: [ '按问题','按时间'],
-    touch_start:0,
-    touch_end:0
+    addIA:{},
+    exchangeIA:{},
+    trashcanIA:{},
+    isSpread:false
+  },
+
+  /**
+   * 生命周期函数--页面加载就绪
+   */
+  onReady:function(){
+    this.addIA = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease'
+    });
+    this.exchangeIA = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease'
+    });
+    this.trashcanIA = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease'
+    });
   },
 
   /**
@@ -73,6 +93,9 @@ Page({
       days:final_days
     });
   },
+  /**
+   * 点击垃圾桶
+   */
   cleanAll: function () {
     let that = this;
     wx.showModal({
@@ -96,44 +119,29 @@ Page({
     
   },
   tapMsg(e){
-    let that = this;
-    //触摸时间距离页面打开的毫秒数
-    var touchTime = that.data.touch_end - that.data.touch_start;
-    //如果按下时间大于350为长按
-    if (touchTime > 350) {
-      wx.showModal({
-        title: '提示',
-        content: '确定要取消收藏该记录吗？',
-        success: function (sm) {
-          if (sm.confirm) {
-            let index = e.currentTarget.dataset.i;
-            let items = that.data.items;
-            items.splice(index, 1);
-            that.setData({
-              items
-            });
-          }
-        }
-      })
-    } else {
-      wx.navigateTo({
-        url:'/pages/detail/detail'
-      })
+    wx.navigateTo({
+      url:'/pages/detail/detail'
+    })
+  },
+  /**
+   * 点击右下角加号图标
+   */
+  tapAddIcon:function(){
+    let isSpread = this.data.isSpread;
+    if (!isSpread){
+      this.addIA.rotate(135).opacity(0.5).step();
+      this.exchangeIA.opacity(1).translateY(-60).step();
+      this.trashcanIA.opacity(1).translateY(-120).step();
+    }else{
+      this.addIA.rotate(0).opacity(1).step();
+      this.exchangeIA.opacity(0).translateY(0).step();
+      this.trashcanIA.opacity(0).translateY(0).step();
     }
-  },
-
-  //按下事件开始
-  mytouchstart: function (e) {
-    let that = this;
-    that.setData({
-      touch_start: e.timeStamp
-    })
-  },
-  //按下事件结束
-  mytouchend: function (e) {
-    let that = this;
-    that.setData({
-      touch_end: e.timeStamp
-    })
+    this.setData({
+      isSpread:!isSpread,
+      addIA: this.addIA.export(),
+      exchangeIA: this.exchangeIA.export(),
+      trashcanIA: this.trashcanIA.export(),
+    });
   }
 })

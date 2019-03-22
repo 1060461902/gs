@@ -1,16 +1,4 @@
 <view>
-  <text class='title'>历史记录</text>
-  <picker
-    class='show-type'
-    mode='selector' 
-    value="{{index}}" 
-    bindchange="bindPickerChange"
-    range='{{range}}'>
-    <view class="picker">
-      {{range[index]}}
-      <view class='arrow'></view>
-    </view>
-  </picker>
   <scroll-view
     wx:if='{{index==0}}'
     scroll-y
@@ -47,7 +35,34 @@
       </navigator>
     </view>
   </view>
-  <view class='bottom-btn-bar'>
-    <button class='bottom-btn' bindtap='cleanAll'>一键清除历史记录</button>
-  </view>
+  <!-- <image
+    src='/img/icon_roundreduce_fill.png'
+    bindtap='tapReduceIcon'
+    class='right-corner right-corner-invisible'
+    animation='{{reduceIA}}'>
+  </image> -->
+  <picker
+    class='show-type'
+    mode='selector' 
+    value="{{index}}" 
+    bindchange="bindPickerChange"
+    range='{{range}}'>
+    <image
+      src='/img/icon_exchange_fee847.png'
+      class='right-corner right-corner-invisible right-corner-exchange'
+      animation='{{exchangeIA}}'>
+    </image>
+  </picker>
+  <image
+    src='/img/icon_trashcan_dd6572.png'
+    bindtap='cleanAll'
+    class='right-corner right-corner-invisible right-corner-trashcan'
+    animation='{{trashcanIA}}'>
+  </image>
+  <image
+    src='/img/icon_roundadd_fill.png'
+    bindtap='tapAddIcon'
+    animation='{{addIA}}'
+    class='right-corner'>
+  </image>
 </view>

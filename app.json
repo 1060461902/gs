@@ -1,10 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/main/main",
     "pages/history/history",
     "pages/collect/collect",
-    "pages/ask/ask",
     "pages/detail/detail",
     "pages/detail_date/detail_date"
   ],
@@ -13,5 +11,28 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "selectedColor": "#1296db", 
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"客服",
+        "iconPath":"img/server.png",
+        "selectedIconPath":"img/server_s.png"
+      },
+      {
+        "pagePath": "pages/collect/collect",
+        "text": "收藏",
+        "iconPath": "img/collect.png",
+        "selectedIconPath": "img/collect_s.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "img/history.png",
+        "selectedIconPath": "img/history_s.png"
+      }
+    ]
   }
 }
